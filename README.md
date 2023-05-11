@@ -1,2 +1,2 @@
 # kadai
-github kadai
+vue.js kadai

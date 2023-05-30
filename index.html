@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="description" content="レディーストップスの通販ならベルーナ。人気のトップスがお手頃価格でサイズ豊富。割引クーポンやセールなどお得なキャンペーンも随時開催中！更に交換送料無料サービスで安心。ミセスファッション通販サイトはベルーナ。">
+    <meta name="keywords" content="トップス,レディースファッション,女性,ミセス,40代,50代,60代,通販,アイテム,ベルーナ"> 
+    <title>トップスファッション通販 - ベルーナ</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>ベルーナ</h1>
+        <p>Online Store</p>
+    </div>
+    <div class="nav">
+        <ul class="nav_list">
+            <li><a href="#">メニュー</a></li>
+            <li><a href="#">ログイン</a></li>
+            <li><a href="#">お気に入り</a></li>
+            <li><a href="#">カタログ</a></li>
+        </ul>
+    </div>
+    <div class="product">
+        <ul class="product_list">
+            <li>トップ</li>
+            <li>レディース</li>
+            <li>インナー・下着</li>
+            <li>メンズ</li>
+            <li>インテリア</li>
+        </ul>
+    </div>
+    <div id="app">
+        <p>商品検索</p>
+        <input type="text" placeholder="商品を探す" v-model="keyword" class="form">
+        <!-- 検索欄に入力がある時、一致したリストを表示 -->
+        <div v-if=" keyword !== '' "> 
+            <div v-for="item in searchitems" :key = "item">{{item}}</div>
+            
+        </div>
+        <!-- 検索欄に入力がない時、最初に表示されていたリストを表示 -->
+            <div v-else>
+            <div v-for="list in lists" :key = "list"></div>
+        </div>
+
+        <!--タグ-->
+        <!-- <div class="tag_list">
+            <label><input type="radio" v-model="tag" value="">★4以上
+            </label>
+            
+
+        </div> -->
+        <div class="fushion">
+            <ul v-for="list in lists" :key = "list"> 
+                <li class="fushion_list"><img :src="Image">{{list[0]}}</li>
+                <li class="fushion_list">{{list[1]}}</li>
+                <li class="fushion_list">{{list[2]}}</li>
+                <li class="fushion_list">{{list[3]}}</li>
+                <li class="fushion_list">{{list[4]}}</li>
+                <li class="fushion_list">{{list[5]}}</li>
+                <li class="fushion_list">{{list[6]}}</li>
+             </ul>
+        </div>
+         
+         
+         
+    
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="main.js"></script>
+</body>
+</html>
